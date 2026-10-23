@@ -16,10 +16,10 @@ use LBHurtado\XDeploy\Contracts\DeploymentManifestResolverContract;
 use LBHurtado\XDeploy\Contracts\DeploymentRegistryTransportContract;
 use LBHurtado\XDeploy\Contracts\DeploymentTelemetryReporterContract;
 use LBHurtado\XDeploy\Services\ConfiguredDeploymentRegistryTransport;
+use LBHurtado\XDeploy\Services\ConfiguredDeploymentTelemetryReporter;
 use LBHurtado\XDeploy\Services\DeploymentCommissioner;
 use LBHurtado\XDeploy\Services\DeploymentCompatibilityChecker;
 use LBHurtado\XDeploy\Services\DeploymentManifestResolver;
-use LBHurtado\XDeploy\Services\NullDeploymentTelemetryReporter;
 
 final class XDeployServiceProvider extends ServiceProvider
 {
@@ -31,7 +31,7 @@ final class XDeployServiceProvider extends ServiceProvider
         $this->app->singletonIf(DeploymentCompatibilityCheckerContract::class, DeploymentCompatibilityChecker::class);
         $this->app->singletonIf(DeploymentCommissionerContract::class, DeploymentCommissioner::class);
         $this->app->singletonIf(DeploymentRegistryTransportContract::class, ConfiguredDeploymentRegistryTransport::class);
-        $this->app->singletonIf(DeploymentTelemetryReporterContract::class, NullDeploymentTelemetryReporter::class);
+        $this->app->singletonIf(DeploymentTelemetryReporterContract::class, ConfiguredDeploymentTelemetryReporter::class);
     }
 
     public function boot(): void
