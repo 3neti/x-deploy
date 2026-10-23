@@ -1,0 +1,42 @@
+{
+    "name": "3neti/x-deploy",
+    "description": "Release compatibility, commissioning, and deployment telemetry for x-change hosts.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{"name": "Lester B. Hurtado"}],
+    "autoload": {
+        "psr-4": {"LBHurtado\\XDeploy\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"LBHurtado\\XDeploy\\Tests\\": "tests/"}
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["LBHurtado\\XDeploy\\XDeployServiceProvider"]
+        },
+        "branch-alias": {"dev-main": "1.x-dev"}
+    },
+    "require": {
+        "php": "^8.3",
+        "illuminate/console": "^12.0 || ^13.0",
+        "illuminate/http": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "pint": "vendor/bin/pint"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
