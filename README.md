@@ -58,6 +58,7 @@ The package uses the `LBHurtado\\XDeploy` namespace and follows the directory an
 
 ## Documentation
 
+- [CI/CD and fleet deployment design (proposed)](docs/cicd-and-fleet-design.md)
 - [Architecture](docs/architecture.md)
 - [Manifest](docs/manifest.md)
 - [Commissioning](docs/commissioning.md)

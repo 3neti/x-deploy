@@ -19,3 +19,8 @@ Telemetry is asynchronous and fail-open. A registry outage must not affect user 
 ## Fleet model
 
 Each local, testing, staging, production, bank, or EMI host has an instance identity and emits a sanitized release and capability profile. A future registry service can aggregate these profiles without receiving credentials or private financial data.
+
+See the [proposed CI/CD and fleet deployment design](cicd-and-fleet-design.md)
+for environment topology, package and host release gates, GitHub and Laravel
+Cloud integration, visual pipeline status, and the observational fleet dashboard.
+It distinguishes currently implemented checks and transport from planned capabilities.
